@@ -1,0 +1,19 @@
+.img-champion {
+  width: 96px;
+  height: 96px;
+}
+
+.img-process {
+
+  img {
+
+    @include for-desktop-up {
+      width: auto;
+      height: 310px;
+    }
+
+    @include for-tablet-portrait-only {
+      height: 95px;
+    }
+  }
+}

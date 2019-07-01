@@ -1,0 +1,11 @@
+.breadcrumb {
+  background-color: #F2F2F2;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: $bold;
+  color: ab-color('black');
+
+  @include for-phone-only {
+    padding: .75rem 1rem !important;
+  }
+}

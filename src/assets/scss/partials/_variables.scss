@@ -1,0 +1,22 @@
+$ab-colors: (
+  'primary': #FF128D,
+  'secondary': #0FA3B3,
+  'white': #FFFFFF,
+  'grey': #AEAEAE,
+  'light-grey': #E6E6E6,
+  'black': #333333,
+  'satin': #EEECE0,
+  'ice': #BFE5E8
+);
+
+$body: 'Cabin', sans-serif;
+$head: 'Fira Sans', sans-serif;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+@function ab-color($key: 'primary') {
+  @return map-get($ab-colors, $key);
+}

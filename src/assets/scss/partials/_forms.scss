@@ -1,0 +1,47 @@
+.form-control {
+  border-radius: 0;
+
+  &:focus {
+    border-color: lighten( ab-color('primary'), 20%);
+    box-shadow: 0 0 0 0.2rem rgba(255,18,141,.25)
+  }
+
+  @include for-phone-only {
+    margin-bottom: 1rem;
+  }
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 17px;
+  margin-left: 9px;
+  height: 36px;
+  line-height: 19px;
+  text-align: center;
+  pointer-events: none;
+  color: ab-color('grey');
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url( ~@/assets/img/dropdown.png );
+  background-repeat: no-repeat;
+  background-position-x: 7px;
+  background-position-y: 14px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem !important;
+  padding-left: 2.5rem !important;
+  background-color: ab-color('black') !important;
+  color: ab-color('white') !important;
+}
