@@ -69,6 +69,10 @@ a {
   background-color: ab-color('ice');
 }
 
+.bg-primary {
+  background-color: ab-color('primary') !important;
+}
+
 .bg-secondary--light {
   background-color: lighten(ab-color('secondary'), 50%);
 }
@@ -239,4 +243,22 @@ section {
 
 .active-about {
   color: ab-color('primary');
+}
+
+.progress {
+  background-color: ab-color('grey');
+}
+
+.container {
+
+  @include for-desktop-up {
+    max-width: 1366px;
+  }
+}
+
+.flex-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }

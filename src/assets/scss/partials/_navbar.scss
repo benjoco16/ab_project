@@ -144,12 +144,16 @@
 
 .navbar-additional {
   position: absolute;
-  top: 1.5rem;
+  top: 0;
   z-index: 2;
-  right: 1.8rem;
+  right: 0;
 
   @include for-phone-only {
     display: none;
+  }
+
+  @media only screen and (width: 1440px) {
+    right: 60px;
   }
 
   @include for-tablet-portrait-up {
@@ -195,4 +199,8 @@
     right: 0;
   }
 
+}
+
+.navbar-collapse {
+  position: relative;
 }

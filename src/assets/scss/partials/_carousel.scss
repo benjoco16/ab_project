@@ -20,6 +20,12 @@
   @include for-phone-only {
     font-size: 2rem;
   }
+
+  @media screen
+    and (min-width: 1280px)
+    and (max-width: 1480px){
+      top: -74px;
+  }
 }
 
 .carousel {

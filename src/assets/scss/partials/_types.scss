@@ -47,6 +47,14 @@ h3 {
   color: ab-color('white');
 }
 
+.text-color--primary {
+  color: ab-color('primary');
+}
+
+.text-color--teal {
+  color: ab-color('secondary');
+}
+
 .text-color--black {
   color: ab-color('black');
 }

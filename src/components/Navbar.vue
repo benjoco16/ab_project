@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-transparent navbar-ab"
     :class="{ 'navbarOpen' : show }"
   >
-    <div class="container-fluid">
+    <div class="container">
       <router-link to="/" class="navbar-brand mr-5">
         <img src="@/assets/img/logo.png" alt="logo" class="img-fluid">
       </router-link>
@@ -15,6 +15,10 @@
       <div class="collapse navbar-collapse" id="navbarNav"
         :class="{ 'show': show }"
       >
+        <div class="navbar-additional">
+          <img src="@/assets/img/office.png" v-if="['home', 'our-communities', 'our-programs'].includes($route.name)" alt="Office of the vice president">
+          <img src="@/assets/img/office-inverse.png" v-if="['make-impact'].includes($route.name)" alt="Office of the vice president">
+        </div>
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="javascript:;" class="nav-link pl-0 pr-0 mr-4" role="button" data-toggle="modal" data-target="#whatModal"
