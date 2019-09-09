@@ -11,12 +11,27 @@
   }
 
   .modal-header {
-
     @include for-tablet-landscape-up {
       border: 0;
     }
 
     .close {
+      color: #ffffff;
+      margin-right: 98px;
+      opacity: 1;
+      margin-bottom: 10px;
+      margin-top: -27px;
+      img {
+        width: 38px;
+      }
+
+      @media (min-width: 320px) and (max-width: 426px) {
+        color: #ffffff;
+        margin-right: 0;
+        opacity: 1;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
 
       @include for-tablet-landscape-up {
         font-size: 3.5rem;
@@ -27,17 +42,16 @@
   .modal-content {
     border-radius: 0;
     border: 0;
+    top: 22px;
   }
 
   .modal-body {
-
     @include for-tablet-landscape-up {
       padding: 0;
     }
   }
 
   .section-primary {
-
     @include for-phone-only {
       padding-top: 1rem;
       padding-bottom: 1rem;
@@ -50,25 +64,29 @@
   }
 
   .nav-link-extra {
-
     @include for-phone-only {
       flex-basis: auto;
       padding: 0;
     }
 
     a.text-color--white {
-
       @include for-phone-only {
-        color: ab-color('black') !important;
+        color: ab-color("black") !important;
       }
-
     }
   }
 }
 
 .impact-modal {
-
   &.show {
     padding-right: 0 !important;
   }
+}
+
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+
+.modal-open {
+  padding-right: 0 !important;
 }

@@ -2,18 +2,17 @@
   z-index: 1;
 
   @include for-desktop-up {
-    padding-top:0px;
-    padding-bottom:0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .dropdown-menu {
-
     @include for-desktop-up {
-      border:none;
-      background-color: ab-color('primary') !important;
-      width:100%;
-      left:0;
-      right:0;
+      border: none;
+      background-color: ab-color("primary") !important;
+      width: 100%;
+      left: 0;
+      right: 0;
       top: 165px;
       border-radius: 0;
       padding-top: 2rem;
@@ -23,9 +22,8 @@
   }
 
   .dropdown {
-
     @include for-desktop-up {
-      position:static;
+      position: static;
     }
   }
 }
@@ -48,7 +46,6 @@
   padding-top: 1rem;
 
   img {
-
     @include for-phone-only {
       width: 100px;
     }
@@ -64,7 +61,6 @@
 }
 
 .navbar-expand-lg {
-
   .navbar-nav {
     margin-top: 6rem;
 
@@ -89,32 +85,31 @@
       padding-left: 1rem;
       text-transform: capitalize;
       font-size: 1.2rem;
-      color: ab-color('white');
+      color: ab-color("white");
 
       @include for-phone-only {
-        color: ab-color('black');
+        color: ab-color("black");
         margin-right: 0 !important;
       }
 
       @include for-tablet-portrait-up {
-        color: ab-color('black');
+        color: ab-color("black");
       }
 
       @include for-desktop-up {
-        color: ab-color('white');
+        color: ab-color("white");
       }
     }
   }
 }
 
 .navbar-transparent {
-
   @include for-phone-only {
-    background-color: ab-color('white');
+    background-color: ab-color("white");
   }
 
   @include for-tablet-portrait-up {
-    background-color: ab-color('white');
+    background-color: ab-color("white");
   }
 
   @include for-desktop-up {
@@ -127,18 +122,17 @@
 }
 
 .nav-item {
-
   .exact-active {
-    border-bottom: 10px solid ab-color('primary');
+    border-bottom: 10px solid ab-color("primary");
 
     @include for-phone-only {
-      border-bottom: 3px solid ab-color('primary');
+      border-bottom: 3px solid ab-color("primary");
     }
   }
 
   @include for-desktop-up {
-    padding:.5rem .5rem;
-    margin:0 .25rem;
+    padding: 0.5rem 0.5rem;
+    margin: 0 0.25rem;
   }
 }
 
@@ -166,17 +160,16 @@
 }
 
 @include for-desktop-up {
-  padding-top:0px;
-  padding-bottom:0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
-
+.navbar .dropdown:hover .dropdown-menu,
+.navbar .dropdown .dropdown-menu:hover {
   @include for-desktop-up {
-    display:block!important;
+    display: block !important;
   }
 }
-
 
 .avatar-profile {
   max-width: 65px;
@@ -184,13 +177,15 @@
 
 .avatar-container {
   position: absolute;
-  right: 20%;
+  right: 16rem;
+  width: 100%;
 
-  p, a {
-    color: ab-color('white');
+  p,
+  a {
+    color: ab-color("white");
 
     @include for-tablet-down {
-      color: ab-color('black');
+      color: ab-color("black");
     }
   }
 
@@ -198,9 +193,64 @@
     position: relative;
     right: 0;
   }
-
 }
 
 .navbar-collapse {
   position: relative;
+}
+
+.nav-modal-open,
+.navbar-ab {
+  @media (min-width: 1024px) {
+    // display: none;
+    // height: 0;
+    position: static;
+    padding-top: 20px;
+
+    .navbar-brand,
+    .navbar-nav {
+      position: relative;
+      z-index: 9999;
+      // margin-top: 20px;
+    }
+
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      // top: 75px;
+
+      .nav-link {
+        color: #ffffff;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+
+        &.active {
+          &:after {
+            content: "";
+            display: block;
+            border-bottom: 51px solid ab-color("primary");
+          }
+        }
+      }
+    }
+
+    .navbar-additional {
+      z-index: 9999;
+      top: -7px;
+    }
+
+    .ab-right-nav {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ab-left-nav {
+      position: absolute;
+      top: 0;
+      .nav-link {
+        border-bottom: 51px solid transparent;
+      }
+    }
+  }
 }

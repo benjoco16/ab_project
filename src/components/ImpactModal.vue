@@ -1,12 +1,18 @@
 <template>
   <!-- The Modal -->
-  <div class="modal impact-modal" id="impactModal">
+  <div class="modal impact-modal" id="impactModal" ref="impactModal">
     <div class="modal-dialog main-modal">
       <div class="modal-content bg-transparent">
-
         <!-- Modal Header -->
         <div class="modal-header">
-          <button type="button" class="close text-color--primary text-color--white" data-dismiss="modal">&times;</button>
+          <button
+            type="button"
+            class="close text-color--primary text-color--white"
+            data-dismiss="modal"
+            @click="$root.$emit('close-impact-modal')"
+          >
+            <img src="@/assets/img/cancel.svg" alt />
+          </button>
         </div>
 
         <!-- Modal body -->
@@ -14,12 +20,21 @@
           <div class="container-fluid section-primary pb-0">
             <div class="container">
               <div class="row pb-4">
-                <div class="col-3 nav-link-extra" v-for="secondLink in secondLinks" :key="secondLink.id">
-                  <img :src="secondLink.img" alt="angat buhay" class="img-fluid mb-3 d-none d-lg-block">
+                <div
+                  class="col-3 nav-link-extra"
+                  v-for="secondLink in secondLinks"
+                  :key="secondLink.id"
+                >
+                  <img
+                    :src="secondLink.img"
+                    alt="angat buhay"
+                    class="img-fluid mb-3 d-none d-lg-block"
+                  />
                   <router-link
                     :to="{ name: 'make-impact' }"
                     class="text-color--secondary text-size-2 text-color--white text-capitalize"
-                    data-dismiss="modal">{{ secondLink.name }}</router-link>
+                    data-dismiss="modal"
+                  >{{ secondLink.name }}</router-link>
                 </div>
               </div>
             </div>
@@ -31,7 +46,8 @@
                     <h4 class="text-size-1 font-weight-bold">What We Do</h4>
                     <ul class="list-unstyled d-block">
                       <li v-for="linkExtra in linkExtras" :key="linkExtra.name">
-                        <router-link :to="{ name: linkExtra.path }"
+                        <router-link
+                          :to="{ name: linkExtra.path }"
                           class="text-color--secondary text-color--black"
                           data-dismiss="modal"
                         >{{ linkExtra.name }}</router-link>
@@ -63,42 +79,55 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       secondLinks: [
         {
           id: 1,
-          img: require('../assets/img/modal2/register.jpg'),
-          name: 'Register'
+          img: require("../assets/img/modal2/register.jpg"),
+          name: "Register"
         }
       ],
       linkExtras: [
         {
-          name: 'Angat Buhay',
-          path: 'home'
+          name: "Angat Buhay",
+          path: "home"
         },
         {
-          name: 'About This Portal',
-          path: 'home'
+          name: "About This Portal",
+          path: "home"
         },
         {
-          name: 'Our Communities',
-          path: 'our-communities'
+          name: "Our Communities",
+          path: "our-communities"
         },
         {
-          name: 'Our Programs',
-          path: 'our-programs'
+          name: "Our Programs",
+          path: "our-programs"
         },
         {
-          name: 'News',
-          path: 'home'
+          name: "News",
+          path: "home"
         }
       ]
+    };
+  },
+  methods: {
+    bodyHasModalOpen() {
+      $(document.body).addClass("modal-open");
+    },
+    bodyHasModalClose() {
+      $(document.body).removeClass("modal-open");
+      console.log("hehe");
+      document.getElementById("impactToggle").classList.remove("active");
     }
+  },
+  mounted() {
+    $(this.$refs.impactModal).on("shown.bs.modal", this.bodyHasModalOpen);
+    $(this.$refs.impactModal).on("hidden.bs.modal", this.bodyHasModalClose);
   }
-}
+};
 </script>
 
 <style>
-
 </style>

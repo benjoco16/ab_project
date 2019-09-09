@@ -4,31 +4,36 @@
 }
 
 .btn-primary {
-  background-color: ab-color('primary');
-  border-color: ab-color('primary');
-  color: ab-color('white') !important;
+  background-color: ab-color("primary");
+  border-color: ab-color("primary");
+  color: ab-color("white") !important;
 
-  &:hover, &:active {
-    background-color: lighten( ab-color('primary'), 10% ) !important;
-    border-color: lighten( ab-color('primary'), 10% ) !important;
+  &:hover,
+  &:active {
+    background-color: lighten(ab-color("primary"), 10%) !important;
+    border-color: lighten(ab-color("primary"), 10%) !important;
   }
 }
 
 .btn-secondary {
-  background-color: ab-color('secondary');
-  border-color: ab-color('secondary');
-  color: ab-color('white') !important;
+  background-color: ab-color("secondary");
+  border-color: ab-color("secondary");
+  color: ab-color("white") !important;
 
-  &:hover, &:active {
-    background-color: lighten( ab-color('secondary'), 10% ) !important;
-    border-color: lighten( ab-color('secondary'), 10% ) !important;
+  &:hover,
+  &:active {
+    background-color: lighten(ab-color("secondary"), 10%) !important;
+    border-color: lighten(ab-color("secondary"), 10%) !important;
   }
 }
 
 .btn-m-block {
-
   @include for-phone-only {
     width: 100%;
     display: block;
   }
+}
+
+button:focus {
+  outline: none;
 }

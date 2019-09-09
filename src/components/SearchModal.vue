@@ -2,13 +2,19 @@
   <div class="modal modal-search" id="searchModal">
     <div class="modal-dialog">
       <div class="modal-content bg-transparent border-0">
-        <button type="button" class="close close-search text-color--primary text-color--white text-size-3" data-dismiss="modal">&times;</button>
+        <button
+          type="button"
+          class="close close-search text-color--primary text-color--white text-size-3"
+          data-dismiss="modal"
+        >
+          <img src="@/assets/img/cancel.svg" alt />
+        </button>
         <!-- Modal body -->
         <div class="modal-body">
           <form action="#">
             <div class="form-group has-search">
               <icon icon="search" class="form-control-feedback" />
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" class="form-control" placeholder="Search" />
             </div>
           </form>
         </div>
@@ -18,16 +24,18 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
 .close-search {
-    font-size: 3.5rem;
-    position: absolute;
-    right: -22px;
-    margin-left: 18rem;
+  font-size: 3.5rem;
+  position: absolute;
+  right: -22px;
+  margin-left: 18rem;
+
+  img {
+    width: 30px;
+  }
 }
 </style>
